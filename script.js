@@ -1,5 +1,6 @@
 
 const diceRoll = document.getElementById('rollDice');
+const diceBox = document.getElementById('diceBox');
 
 diceRoll.onclick = rollDice;
 
@@ -9,16 +10,22 @@ let maxTotal = 21;
 
 
 function rollDice () {
-    if (currentRoll == 1) {
-        alert(`1 - You lose!`);
-    }
-    else if (rollTotal < 20) {
-        currentRoll = randomNum();
+    currentRoll = randomNum();
     rollTotal += currentRoll;
-    alert(`${rollTotal}, keep going!`)
-    } else {
-        alert(`${rollTotal} - You win!`)
+    if (currentRoll == 1) {
+        diceBox.innerHTML = `1! You lose!\ncurrent: ${currentRoll} - total: ${rollTotal}`;
     }
+    else if (rollTotal >= 20) {
+        diceBox.innerHTML = `You win!\ncurrent: ${currentRoll} - total: ${rollTotal}`;
+        rollTotal = 0;
+        } else {
+            currentRoll = randomNum();
+            diceBox.innerHTML = `Keep going!\ncurrent: ${currentRoll} - total: ${rollTotal}`;
+    }
+
+
+
+
 }
 
 

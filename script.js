@@ -12,21 +12,21 @@ function rollDice () {
     page.classList.add("spin");
     setTimeout(function () {
         page.classList.remove("spin");
-   },800);
+   },600);
 
     currentRoll = randomNum();
     rollTotal += currentRoll;
+
+
     if (currentRoll == 1) {
-        diceBox.innerHTML = `<img src="./img/dice1.png"><br>1! You lose! Click roll to play again!<br><br>current: <b>${currentRoll}</b><br>total: <b>${rollTotal}</b>`;
-    }
-    else if (rollTotal >= 20) {
+        diceBox.innerHTML = `<img src="./img/dice1.png"><br>1! You lose! Click roll to play again!<br><br>current: <b>1</b><br>final total: <b>${rollTotal}</b>`;
+        rollTotal = 0;
+    } else if (rollTotal >= 20) {
         diceBox.innerHTML = `<img src="./img/dice${currentRoll}.png"><br>Winner! Click roll to play again!<br><br>current: <b>${currentRoll}</b><br>final total: <b>${rollTotal}</b>`;
         rollTotal = 0;
         } else {
-            currentRoll = randomNum();
-            diceBox.innerHTML = `<img src="./img/dice${currentRoll}.png"><br>Keep going!<br><br>current: <b>${currentRoll}</b><br>total: <b>${rollTotal}</b>`;
+            diceBox.innerHTML = `<img src="./img/dice${currentRoll}.png"><br>Keep going!<br><br>current: <b>${currentRoll}</b><br>current total: <b>${rollTotal}</b>`;
     }
-
 
 }
 

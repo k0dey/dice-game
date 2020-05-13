@@ -4,7 +4,7 @@
     to {transform:rotate(360deg);}
 }
 
-html {
+body {
 
     text-align: center;
     padding: 50px;
@@ -30,8 +30,9 @@ button {
 header {
     font-family: 'Titillium Web', sans-serif;
     font-size: 42pt;
-    line-height: 40px;
+    line-height: 41px;
     color: #17252a;
+    padding: 20px;
 }
 
 #titleColour {
@@ -50,7 +51,6 @@ i {
 
 .spin {
     animation: spin 300ms linear 2;
-
 }
 
 img {

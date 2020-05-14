@@ -6,11 +6,14 @@
     <link rel="stylesheet" href="./main.css" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-
     <title>Dice Game</title>
   </head>
   <body>
-    <div id="wrapper">
+
+    
+    <button id="players" class="top">TOGGLE PLAYERS</button>
+
+    <div id="wrapper" class="unhide">
         <header><div id="titleColour">DICE</div>GAME</header>
       <div id="buttons">
         <button id="rollDice">Roll! <i class="fas fa-dice"></i></button>
@@ -19,10 +22,27 @@
       <div id="diceBox">
         <!-- code inserted by js -->
         <img src="./img/dice1.png" class="diceImg"><br>
-        Click the button to roll!
+        <b>Click the button to roll!</b>
       </div>
 
     </div>
+
+    <div id="wrapperTwo" class="hide">
+      <header><div id="titleColour">DICE</div>GAME II</header>
+    <div id="p1">player1</div><div id="p2">player2</div>
+    
+    <div id="buttonsTwo">
+      <button id="rollDiceTwo">Roll! <i class="fas fa-dice"></i></button>
+      <button id="holdDiceTwo">Hold <i class="fas fa-dice"></i></button>
+    </div>
+
+    <div id="diceBoxTwo">
+      <!-- code inserted by js -->
+      <img src="./img/dice1.png" class="diceImg"><br>
+      <b>Click the button to roll!</b>
+    </div>
+
+  </div>
     <script src="./script.js"></script>
 
   </body>

@@ -5,16 +5,14 @@
 }
 
 body {
-
     text-align: center;
     padding: 50px;
     background-color: #3AAFA9;
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
     color: #17252a;
-    display: flex;
-    justify-content: center;
     margin-top: 50px;
+    overflow: hidden; 
 }
 
 button {
@@ -33,16 +31,18 @@ header {
     line-height: 41px;
     color: #17252a;
     padding: 20px;
+    width: 100%;
 }
 
 #titleColour {
     color: #FEFFFF;
 }
 
-#diceBox {
+#diceBox, #diceBoxTwo {
     height: 400px;
     width: 400px;
     padding: 20px;
+    width: 100%;
 }
 
 i {
@@ -56,4 +56,55 @@ i {
 img {
     border-radius: 25px;
     margin: 10px;
+}
+
+
+#wrapper, #wrapperTwo {
+flex-wrap: wrap;
+align-content: center;
+justify-content: center;
+overflow: hidden;
+}
+
+.hide {
+    display: none;
+}
+
+.unhide {
+    display: flex;
+}
+
+.top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: 'Titillium Web', sans-serif;
+    background-color: transparent;
+}
+
+#p1 {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 50%;
+    height: 100%;
+}
+
+#p2 {
+    background-color: #24918c;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    width: 50%;
+    height: 100%;
 }

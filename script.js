@@ -35,6 +35,8 @@ function selectMode() {
     playerOne = true;
     playerOneScore = 0;
     playerTwoScore = 0;
+    p1score.innerHTML = `<p><b>PLAYER 1</b><br>score: ${playerOneScore}</p>`;
+    p2score.innerHTML = `<p><b>PLAYER 2</b><br>score: ${playerTwoScore}</p>`;
     diceBoxTwo.innerHTML = `<img src="./img/dice1.png"><br><b>Click the button to start a new game!</b>`;
 
   }

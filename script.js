@@ -79,45 +79,44 @@ function rollDiceTwo() {
 
 
   if (currentRoll == 1 && playerOne) {
-    console.log(`p1 lose`);
-    playerOneScore += currentRoll;
-    p1score.innerHTML = `<p><b>PLAYER 1</b><br>score: ${playerOneScore}</p>`
-    p2score.innerHTML = `<p><b>PLAYER 2</b><br>score: ${playerTwoScore}</p>`
 
+    console.log(`p1 lose`);
     playerOneScore = 0;
-    playerTwoScore = 0;
+    diceBoxTwo.innerHTML = `<img src="./img/dice${currentRoll}.png"><br><b>Too bad player 1! Player 2 you're up!</b><br><br>current: <b>${currentRoll}</b><br>current total: <b>${playerOneScore}</b>`;
+    playerOne = false;
   } else if (playerOneScore + currentRoll >= 20) {
-    p1score.innerHTML = `<p><b>PLAYER 1</b><br>score: ${playerOneScore + currentRoll}</p>`
-    p2score.innerHTML = `<p><b>PLAYER 2</b><br>score: ${playerTwoScore}</p>`
+
+    playerOneScore += currentRoll;
+    diceBoxTwo.innerHTML = `<img src="./img/dice${currentRoll}.png"><br><b>Player 1 wins!</b>`;
+
     console.log(`p1 win`);
     playerOneScore = 0;
     playerTwoScore = 0;
   } else if (playerOne) {
+
     console.log(`p1 roll`);
     playerOneScore += currentRoll;
-    p1score.innerHTML = `<p><b>PLAYER 1</b><br>score: ${playerOneScore}</p>`
-    p2score.innerHTML = `<p><b>PLAYER 2</b><br>score: ${playerTwoScore}</p>`
+    diceBoxTwo.innerHTML = `<img src="./img/dice${currentRoll}.png"><br><b>Keep going, Player 1!</b>`;
   } else if (currentRoll == 1 && !playerOne) {
     console.log(`p2 lose`);
-    playerTwoScore += currentRoll;
-    p1score.innerHTML = `<p><b>PLAYER 1</b><br>score: ${playerOneScore}</p>`
-    p2score.innerHTML = `<p><b>PLAYER 2</b><br>score: ${playerTwoScore}</p>`
-    playerOneScore = 0;
     playerTwoScore = 0;
+    diceBoxTwo.innerHTML = `<img src="./img/dice${currentRoll}.png"><br><b>Too bad Player 2! Player 1 you're up!</b>`;
+    playerOne = true;
   } else if (playerTwoScore + currentRoll >= 20) {
     console.log(`p2 win`);
     playerTwoScore += currentRoll;
-    p1score.innerHTML = `<p><b>PLAYER 1</b><br>score: ${playerOneScore + currentRoll}</p>`
-    p2score.innerHTML = `<p><b>PLAYER 2</b><br>score: ${playerTwoScore}</p>`
+    diceBoxTwo.innerHTML = `<img src="./img/dice${currentRoll}.png"><br><b>Player 2 wins!</b>`;
     playerOneScore = 0;
     playerTwoScore = 0;
   } else if (!playerOne){
     console.log(`p2 roll`);
     playerTwoScore += currentRoll;
-    p1score.innerHTML = `<p><b>PLAYER 1</b><br>score: ${playerOneScore}</p>`
-    p2score.innerHTML = `<p><b>PLAYER 2</b><br>score: ${playerTwoScore}</p>`
+    diceBoxTwo.innerHTML = `<img src="./img/dice${currentRoll}.png"><br><b>Keep going, Player 2!</b>`;
 
   } else {
     alert(`error`)
   }
+
+  p1score.innerHTML = `<p><b>PLAYER 1</b><br>score: ${playerOneScore}</p>`
+  p2score.innerHTML = `<p><b>PLAYER 2</b><br>score: ${playerTwoScore}</p>`
 }

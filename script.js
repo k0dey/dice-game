@@ -32,6 +32,7 @@ function selectMode() {
     page.classList.remove("hide");
     page.classList.add("unhide");
     onePlayer = true;
+    playerOne = true;
     playerOneScore = 0;
     playerTwoScore = 0;
     diceBoxTwo.innerHTML = `<img src="./img/dice1.png"><br><b>Click the button to start a new game!</b>`;
